@@ -8,13 +8,10 @@ class DeploymentController extends Controller
 {
 	public function deploy(Request $request)
 	{
-        $commands = ['cd /data/www/dota2_laravel', 'git pull origin master >> /deployinfo.log'];
 		$signature = $request->header('X-Hub-Signature');
 		$payload = file_get_contents('php://input');
 		if ($this->isFromGithub($payload, $signature)) {
-            foreach ($commands as $command){
-                shell_exec($command);
-            }
+            shell_exec('sh /data/www/dota2_laravel/shell/github_webhook.sh');
 			http_response_code(200);
 		} else {
 			abort(403);
