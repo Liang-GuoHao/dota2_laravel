@@ -75,7 +75,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel for Dota2
+                    Laravel for Dota2 !
                 </div>
 
                 <div class="links">
