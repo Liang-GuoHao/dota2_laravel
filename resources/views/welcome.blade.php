@@ -75,7 +75,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Dota21
+                    Dota212
                 </div>
 
                 <div class="links">
