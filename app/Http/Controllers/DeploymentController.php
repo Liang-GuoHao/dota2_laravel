@@ -8,7 +8,7 @@ class DeploymentController extends Controller
 {
 	public function deploy(Request $request)
 	{
-        $commands = ['cd /data/www/dota2_laravel', 'git pull'];
+        $commands = ['cd /data/www/dota2_laravel', 'git pull origin master >> /deployinfo.log'];
 		$signature = $request->header('X-Hub-Signature');
 		$payload = file_get_contents('php://input');
 		if ($this->isFromGithub($payload, $signature)) {
